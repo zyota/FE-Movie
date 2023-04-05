@@ -1,30 +1,29 @@
 import React, { useEffect, useState } from "react";
-
+import Card from "../components/Card-C";
 interface MovieType {
   title: string;
   year: number;
-  imdb: {
-    rating: number;
-    votes: number;
-    id: number;
-  };
+  poster: string;
+  fullplot: string;
+  _id: string;
+  genres: Array<string>;
 }
 
-export default function Cart(): JSX.Element {
+export default function About(): JSX.Element {
   const [movies, setMovies] = useState<MovieType[] | null>(null);
   useEffect(() => {
-    fetch("http://localhost:4000/getMovie")
+    fetch("http://localhost:4000/getMovies")
       .then((response) => response.json())
-      .then((res) => setMovies([res]));
+      .then((res) => setMovies(res));
   }, []);
+  console.log("movies: ", movies);
   return (
-    <div>
-      {movies &&
-        movies.map((movie: MovieType, index: number) => (
-          <div key={index} className="w-1/6 h-1/6">
-            {movie.title}
-          </div>
-        ))}
+    <div className="flex box-border flex-wrap">
+      {movies?.map((movie: MovieType, index: number) => (
+        <div className=" box-border" key={index}>
+          <Card {...movie} />
+        </div>
+      ))}
     </div>
   );
 }
