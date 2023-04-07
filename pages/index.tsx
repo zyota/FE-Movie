@@ -11,7 +11,7 @@ export default function Home(): JSX.Element {
   console.log(abc);
   return (
     <>
-      {/* <Layout children={undefined}></Layout> */}
+      <Layout children={undefined}></Layout>
       <main className={styles.main}>
         <div className={styles.description}>
           <p>

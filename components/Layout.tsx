@@ -1,9 +1,19 @@
 import React, { ReactNode } from "react";
 import Head from "next/head";
+import Card from "./Card-C";
 
 type PropType = {
   children: ReactNode;
 };
+
+interface MovieType {
+  title: string;
+  year: number;
+  poster: string;
+  fullplot: string;
+  _id: string;
+  genres: Array<string>;
+}
 
 export default function Layout({ children }: PropType): JSX.Element {
   return (
@@ -14,6 +24,7 @@ export default function Layout({ children }: PropType): JSX.Element {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <main>{children}</main>
     </div>
   );
 }

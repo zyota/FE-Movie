@@ -13,11 +13,15 @@ type Movie = {
 export default function Card(prop: Movie): JSX.Element {
   console.log(prop);
   return (
-    <div>
+    <div className="w-fit ">
       <Link href={`/movies/${prop._id}`}>
-        <div className="flex justify-center">
+        <div className="flex justify-center ">
           <div className="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700">
-            <img className="rounded-t-lg" src={prop.poster} alt="" />
+            <img
+              className="rounded-t-lg h-2/3 w-full"
+              src={prop.poster}
+              alt=""
+            />
 
             <div className="p-6">
               <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
