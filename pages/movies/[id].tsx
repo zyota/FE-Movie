@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
+// import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 
 type Movie = {
   title: string;
